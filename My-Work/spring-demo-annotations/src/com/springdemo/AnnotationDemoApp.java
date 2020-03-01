@@ -17,9 +17,12 @@ public class AnnotationDemoApp {
 		
 		// call a method on the bean
 		System.out.println("Tennis coach: " + tennisCoach.getDailyWorkout());
-		
+		System.out.println("\t - " + tennisCoach.getDailyfortune());
+		System.out.println();
 		
 		System.out.println("Esport coach: " + esportCoach.getDailyWorkout());
+		System.out.println("\t - " + esportCoach.getDailyfortune());
+		System.out.println();
 		// close the context
 		context.close();
 	}
