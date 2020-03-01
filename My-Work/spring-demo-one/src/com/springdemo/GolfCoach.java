@@ -1,20 +1,16 @@
 package com.springdemo;
 
-public class TrackmaniaCoach implements Coach {
+public class GolfCoach implements Coach {
 
 	private FortuneService fortuneService;
-	
-	public TrackmaniaCoach() {
-	}
 
-	public TrackmaniaCoach(FortuneService theFortuneservice) {
+	public GolfCoach(FortuneService theFortuneservice) {
 		fortuneService = theFortuneservice;
 	}
 	
 	@Override
 	public String getDailyWorkout() {
-
-		return "Practice Rammstein into B2 expand !";
+		return "Practice Practice :p";
 	}
 
 	@Override
