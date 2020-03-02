@@ -1,17 +1,13 @@
 package com.springdemo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class EsportCoach implements Coach {
 
+	@Autowired
 	private FortuneService fortuneService;
-	
-	
-	
-	public EsportCoach(FortuneService theFortuneService) {
-		this.fortuneService = theFortuneService;
-	}
 
 	@Override
 	public String getDailyWorkout() {
