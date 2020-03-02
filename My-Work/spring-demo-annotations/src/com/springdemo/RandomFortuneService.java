@@ -2,24 +2,24 @@ package com.springdemo;
 
 import java.util.Random;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class RandomFortuneService implements FortuneService {
 
+	@Value("${fortune.list}")
+	private String fortunes;
 	
-	private String[] fortunes= {
-			"Beware of the wolf in sheep's clothing",
-			"Diligence is the mother of good luck",
-			"The journey is the reward"
-	};
+	private String[] splitFortunes;
 	
 	private Random myRandom = new Random();
-	
+
 	@Override
 	public String getFortune() {
-		int indexOfFortune = myRandom.nextInt(fortunes.length);
-		return fortunes[indexOfFortune];
+		splitFortunes= fortunes.split(",");
+		int indexOfFortune = myRandom.nextInt(splitFortunes.length);
+		return splitFortunes[indexOfFortune];
 	}
 
 }
