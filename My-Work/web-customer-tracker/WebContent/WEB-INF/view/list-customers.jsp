@@ -40,15 +40,24 @@
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Email</th>
+					<th>Action</th>
 				</tr>
 				
 				<!-- loop over and print our customers -->
 				<c:forEach var="customer" items="${customers}">
+					<c:url var="updateLink" value="/customer/showFormForUpdate">
+						<c:param name="customerId" value="${customer.id}"></c:param>
+					</c:url>
+				
 				
 					<tr>
 						<td> ${customer.firstName} </td>
 						<td> ${customer.lastName} </td>
 						<td> ${customer.email} </td>
+						<td>
+							<!-- display the update link -->
+							<a href="${updateLink}">Update</a>
+						</td>
 					</tr>
 				
 				</c:forEach>
