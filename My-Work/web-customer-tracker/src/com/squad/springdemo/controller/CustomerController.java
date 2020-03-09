@@ -64,5 +64,15 @@ public class CustomerController {
 		// send over to our form
 		return "customer-form";
 	}
+	
+	@PostMapping("/deleteCustomer")
+	public String deleteCustomer(@RequestParam("customerId") int id) {
+		
+		
+		
+		return "list-customers";
+	}
+	
+	
 
 }
